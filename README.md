@@ -1,19 +1,18 @@
-# matrix
-Basic CLI matrix calculator on java./ Calculadora básica de matrices para línea de comando en  java. 
+# Calculadora básica de matrices para línea de comando en  java. 
 
-## Operations this program can currently do:
+## Operaciones que este programa puede realizar hasta el momento:
 
-**-Addition of two matrices** 
+**-Suma de dos matrices** 
 
-**-Substraction of two matrices**
+**-Resta de dos matrices**
 
-**-Multiplication of two matrices**
+**-Multiplicación de dos matrices**
 
-**-Transpose of one matrix**
+**-Transpuesta de una matrix**
 
-##How this program works
-This program has a very simple menu to select the operation you want to do perform,
-when an operation is selected, it creates the amount of matrices it needs, asks you to fill one by one
-the elements of the current matrix, performs the operation requested, and prints the result.
-This program doesn't meed to verify if the dimensions of the matrix are compatible with each other because it
-makes sure the dimensions are compatible before creating a second matrix 
+## Cómo funciona el programa
+Éste programa es bastante básico, Tiene un menú en el que seleccionas la operación que quieres realizar,
+ crea la/las matrices que necesite, te pide que le des valores uno a uno a los elementos, y cuando tiene las matrices llenas,
+realiza la operación que hayas solicitado e imprime el resultado.
+Éste programa no revisa si las matrices son compatibles para las operaciones requeridas, ya que simplemente
+se asegura de que la segunda matriz creada sea compatible con la primera.
