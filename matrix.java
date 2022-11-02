@@ -5,34 +5,35 @@ public class matrix{
 //matrices
 public static int[][]one;
 public static int[][]two;
-//public ints for rows and columns
-public static int m; //rows of fm
-public static int n; //columns of fm
-public static int n2; //columns of sm
-public static int s; //Part of mult
+//enteros que uso para dimensiones
+public static int m; //filas de la primera matriz
+public static int n; //columnas de la primera matriz
+public static int n2; //columnas de la segunda matriz
+public static int s; //entero utilizado como vriable para multiplicar
     
-//matrix markers and fillers 
+//Funcion para crear matrices 
    public static int[][] makematrix(int ro, int co) {
         int[][] makematrix = new int[ro][co];
         gv(makematrix, ro, co);
-        System.out.println("\n Initial matrix: ");
+        System.out.println("\n Matriz inicial: ");
         pt(makematrix);
         return makematrix;
    } 
 
 
-//give values to every element
+//Función para dar valores uno a uno a las matrices
 static void gv(int[][]input, int r,int c){
 	Scanner l = new Scanner(System.in);
 	for(int i=0; i<r; i++){
 	for(int j=0; j<c; j++){
-	System.out.print(" Insert element "+(i+1)+(j+1)+":   ");
+	System.out.print(" Ingrese elemento"+(i++)+(j++)+":   "); //La razón por la que le sumo uno a los índices
+    //es porque java comienza a contar desde cero, entonces comienza con elemento 00 si no le sumo 1
 	input[i][j]=l.nextInt();
 	}
 	}
 }
 
-//Transposion
+//Transpuesta
 public static int[][] Trans(int[][] input) {
     System.out.println("\n");
     int Trans[][]=new int[input[0].length][input.length];
@@ -41,7 +42,7 @@ public static int[][] Trans(int[][] input) {
            Trans[j][i]=input[i][j];
         }
     }
-   System.out.println("Transpose: ");
+   System.out.println("Transpuesta: ");
    pt(Trans); 
     System.out.println();
     return Trans;
@@ -67,12 +68,12 @@ makeproblem();
 public static void makeproblem() {
     int ans;
         Scanner sc= new Scanner(System.in);
-        System.out.println("Which operation do you want to perform?");
-        System.out.println("1.- Addition");
-        System.out.println("2.- Substraction");
-        System.out.println("3.- Multiplication");
-        System.out.println("4.- Transposition");
-        System.out.println("5.- Exit");
+        System.out.println("¿Qué operación quiere realizar?");
+        System.out.println("1.- Suma");
+        System.out.println("2.- Resta");
+        System.out.println("3.- Multiplicación");
+        System.out.println("4.- Transposición");
+        System.out.println("5.- Salir");
        ans= sc.nextInt();
        switch(ans){
 	       case 1:
@@ -98,21 +99,21 @@ sc.close();
 
 
 
-//          operations
+//          Operaciones
 
-//addition
+//Suma
 
 public static void sum() {
  Scanner sc = new Scanner(System.in);
- System.out.println("First matrix");
-        System.out.println("Insert number of rows");
+ System.out.println("Primera matriz");
+        System.out.println("Ingrese número de filas");
         m= sc.nextInt();
-        System.out.println("Insert number of columns");        
+        System.out.println("Ingrese número de columnas");        
         n= sc.nextInt();
         System.out.println();
 
 one=makematrix(m, n);
-System.out.println("Second matrix \n The dimensions will be the same as the last one");
+System.out.println("Segunda matriz \n Las dimensiones serán las mismas que las de la matriz anterior");
 two=makematrix(m, n);
 
 int[][]sum2= new int[m][n];
@@ -128,7 +129,7 @@ pt(sum2);
         sc.close();
 }
 
-//substraction
+//Resta
 public static void sub() {
  Scanner sc = new Scanner(System.in);
  System.out.println("First matrix");
@@ -139,7 +140,7 @@ public static void sub() {
         System.out.println();
 
 one=makematrix(m, n);
-System.out.println("Second matrix \n The dimensions will be the same as the last one");
+System.out.println("Second matrix \n Las dimensiones serán las mismas de la matriz anterior");
 two=makematrix(m, n);
 
 int[][]sub2= new int[m][n];
@@ -148,19 +149,19 @@ for(int i=0; i<m; i++){
 		sub2[i][j]=one[i][j]-two[i][j];
         }
 
-System.out.println("Matrix result:");
+System.out.println("Matriz resultante:");
 pt(sub2);
 
         }
         sc.close();
 }
-//Void for Transposition
+//Función para transponer
 public static void transp() {
  Scanner sc = new Scanner(System.in);
- System.out.println("Transposition");
-        System.out.println("Insert number of rows");
+ System.out.println("Transposición");
+        System.out.println("Ingrese número de filas");
         m= sc.nextInt();
-        System.out.println("Insert number of columns");        
+        System.out.println("Ingrese número de columnas");        
         n= sc.nextInt();
         System.out.println();
 	int[][]out=makematrix(m,n);
@@ -168,17 +169,17 @@ public static void transp() {
 
     
 }
-//multiplication
+//multiplicación
 public static void mult(){
  Scanner sc = new Scanner(System.in);
-        System.out.println("First matrix");
-        System.out.println("Insert number of rows");
+        System.out.println("Primera matriz");
+        System.out.println("Ingrese número de filas");
         m= sc.nextInt();
-        System.out.println("Insert number of columns");        
+        System.out.println("Ingrese número de columnas");        
         n= sc.nextInt();
         one=makematrix(m, n);
         System.out.println();
-        System.out.println("Second matrix \nThe rows will be "+n+"\nInsert columns");
+        System.out.println("Segunda matriz \n El número de filas será "+n+"\n Ingrese número de columnas");
         n2=sc.nextInt();
         two=makematrix(n, n2);
 int[][]atb=new int[m][n2];
