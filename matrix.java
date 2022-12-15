@@ -3,7 +3,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class matrix{
-//matrices
+// intial matrices
 public static int[][]one;
 public static int[][]two;
 //dimensions of initial matrices
