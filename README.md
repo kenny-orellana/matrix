@@ -1,6 +1,5 @@
-# Para ver la version en español revisa en el apartado de ramas o branches 
 # matrix
-Basic CLI matrix calculator on java./ Calculadora básica de matrices para línea de comando en  java. 
+Basic CLI matrix calculator on java. 
 
 ## Operations this program can currently do:
 
